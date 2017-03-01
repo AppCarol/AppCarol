@@ -5,6 +5,10 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
+
 namespace AppCarol.iOS
 {
 	[Register("AppDelegate")]
@@ -18,6 +22,9 @@ namespace AppCarol.iOS
 #if ENABLE_TEST_CLOUD
 			Xamarin.Calabash.Start();
 #endif
+
+			//Integration with Visual Studio Mobile Center
+			MobileCenter.Configure("7fa6e580-707b-4aca-8dde-9cb133150e33");
 
 			LoadApplication(new App());
 
