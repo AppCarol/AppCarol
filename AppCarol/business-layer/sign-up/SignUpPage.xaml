@@ -11,7 +11,7 @@
 			<Label Text="Email address" />
 			<Entry x:Name="emailEntry" />
 			<Button Text="Sign Up" Clicked="OnSignUpButtonClicked" />
-			<Label x:Name="messageLabel" />
+			<Label x:Name="messageLabel" /> 
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

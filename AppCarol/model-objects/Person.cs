@@ -3,7 +3,7 @@ using SQLite.Net.Attributes;
 
 namespace AppCarol
 {
-	[Table("Items")]
+	[Table("Person")]
 	public class Person
 	{
 		public Person()
@@ -15,7 +15,7 @@ namespace AppCarol
 
 		[NotNull]
 		public String CompleteName { get; set; }
-
+		 
 		[NotNull]
 		public DateTime BirthDate { get; set; }
 

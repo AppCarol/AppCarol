@@ -12,7 +12,7 @@
 			<Label Text="Password" />
 			<Entry x:Name="passwordEntry" IsPassword="true" />
 			<Button Text="Login" Clicked="OnLoginButtonClicked" />
-			<Label x:Name="messageLabel" />
+			<Label x:Name="messageLabel" /> 
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
