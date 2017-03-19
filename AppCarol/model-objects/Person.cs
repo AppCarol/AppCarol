@@ -20,7 +20,7 @@ namespace AppCarol
 		public DateTime BirthDate { get; set; }
 
 		[NotNull]
-		public User user { get; set; }
+		public User User { get; set; }
 
 		[NotNull]
 		public String Phone { get; set; }
