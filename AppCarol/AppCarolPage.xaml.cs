@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using Xamarin.Forms;
 
 namespace AppCarol
 {
@@ -7,6 +8,13 @@ namespace AppCarol
 		public AppCarolPage()
 		{
 			InitializeComponent();
+		}
+
+		async void OnLogoutButtonClicked(object sender, EventArgs e)
+		{
+			App.IsUserLoggedIn = false;
+			Navigation.InsertPageBefore(new SignInPage(), this);
+			await Navigation.PopAsync();
 		}
 	}
 }

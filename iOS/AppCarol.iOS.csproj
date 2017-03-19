@@ -89,6 +89,19 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.193\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.193\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.193\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.3.3.193\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppCarol\AppCarol.csproj">
@@ -99,6 +112,34 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-57.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-114.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-50.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-100.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-72.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-144.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-48.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-55.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-88.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-172.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-196.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-16.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-32.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-64.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-128.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-256.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-512.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon-app-1024.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -109,10 +150,16 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork%402x" />
+    <ITunesArtwork Include="iTunesArtwork" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.3.193\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />
 </Project>

@@ -4,11 +4,22 @@ namespace AppCarol
 {
 	public partial class App : Application
 	{
+
+		public static bool IsUserLoggedIn { get; set; }
+
 		public App()
 		{
 			InitializeComponent();
 
-			MainPage = new AppCarolPage();
+			//MainPage = new AppCarolPage();
+			if (!IsUserLoggedIn)
+			{
+				MainPage = new NavigationPage(new SignInPage());
+			}
+			else
+			{
+				MainPage = new NavigationPage(new AppCarolPage());
+			}
 		}
 
 		protected override void OnStart()
