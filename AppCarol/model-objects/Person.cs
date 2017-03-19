@@ -11,7 +11,7 @@ namespace AppCarol
 		}
 
 		[PrimaryKey, AutoIncrement]
-		public long id { get; set; }
+		public long Id { get; set; }
 
 		[NotNull]
 		public String CompleteName { get; set; }
@@ -23,6 +23,6 @@ namespace AppCarol
 		public User user { get; set; }
 
 		[NotNull]
-		public String phone { get; set; }
+		public String Phone { get; set; }
 	}
 }

@@ -13,7 +13,7 @@ namespace AppCarol
 		}
 
 		[PrimaryKey, AutoIncrement] 
-		public long id { get; set; }
+		public long Id { get; set; }
 
 		[NotNull]
 		public String Email { get; set; }
