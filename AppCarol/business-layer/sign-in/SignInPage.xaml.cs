@@ -12,6 +12,12 @@ namespace AppCarol
 			InitializeComponent();
 		}
 
+		public SignInPage(String message)
+		{
+			InitializeComponent();
+			messageLabel.Text = message;
+		}
+
 		async void OnSignUpButtonClicked(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new SignUpPage());
@@ -21,7 +27,7 @@ namespace AppCarol
 		{
 			var user = new User
 			{
-				Username = usernameEntry.Text,
+				Email = usernameEntry.Text,
 				Password = passwordEntry.Text
 			};
 
@@ -29,6 +35,7 @@ namespace AppCarol
 			if (isValid)
 			{
 				App.IsUserLoggedIn = true;
+				//App.LoggedUser = formPerson;
 				Navigation.InsertPageBefore(new AppCarolPage(), this);
 				await Navigation.PopAsync();
 			}
@@ -41,7 +48,7 @@ namespace AppCarol
 
 		bool AreCredentialsCorrect(User user)
 		{
-			return user.Username == "USER" && user.Password == "123";
+			return user.Email == "USER" && user.Password == "123";
 		}
 	}
 }

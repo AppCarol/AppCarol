@@ -1,5 +1,6 @@
 ﻿using System;
 using SQLite.Net.Attributes;
+using SQLiteNetExtensions.Attributes;
 
 namespace AppCarol
 {
@@ -12,10 +13,10 @@ namespace AppCarol
 
 		}
 
-		[PrimaryKey, AutoIncrement] 
-		public long Id { get; set; }
+		[PrimaryKey, AutoIncrement, ForeignKey(typeof(Person))] 
+		public Int32 Id { get; set; }
 
-		[NotNull]
+		[NotNull, Unique]
 		public String Email { get; set; }
 
 		[NotNull]

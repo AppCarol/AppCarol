@@ -12,37 +12,62 @@ namespace AppCarol
 			InitializeComponent();
 		}
 
+		public SignUpPage(String message)
+		{
+			InitializeComponent();
+			messageLabel.Text = message;
+		}
+
 		async void OnSignUpButtonClicked(object sender, EventArgs e)
 		{
-			var user = new User()
-			{
-				Username = usernameEntry.Text,
-				Password = passwordEntry.Text,
-				Email = emailEntry.Text
-			};
 
-			// Sign up logic goes here
+			var formPerson = new Person(emailEntry.Text, passwordEntry.Text, completeNameEntry.Text, 
+			                            birthDateEntry.Date, phoneEntry.Text);
 
-			var signUpSucceeded = AreDetailsValid(user);
-			if (signUpSucceeded)
+
+			var valid = validateForm(formPerson);
+
+			if (valid)
 			{
-				var rootPage = Navigation.NavigationStack.FirstOrDefault();
-				if (rootPage != null)
+				try
 				{
-					App.IsUserLoggedIn = true;
-					Navigation.InsertPageBefore(new AppCarolPage(), Navigation.NavigationStack.First());
-					await Navigation.PopToRootAsync();
+					PersonBusiness business = new PersonBusiness();
+
+					business.addPerson(formPerson);
+                    navigate(new SignInPage());
 				}
+				catch(BusinessException ex) 
+				{
+					navigate(new SignInPage(ex.Message));
+				}
+
 			}
 			else
 			{
-				messageLabel.Text = "Sign up failed";
+				//throw view error
+				messageLabel.Text = "Form isn´t valid";
 			}
 		}
 
-		bool AreDetailsValid(User user)
+		async void navigate(Page page) 
 		{
-			return (!string.IsNullOrWhiteSpace(user.Username) && !string.IsNullOrWhiteSpace(user.Password) && !string.IsNullOrWhiteSpace(user.Email) && user.Email.Contains("@"));
+				var rootPage = Navigation.NavigationStack.FirstOrDefault();
+				if (rootPage != null)
+				{
+
+					Navigation.InsertPageBefore(page, Navigation.NavigationStack.First());
+					await Navigation.PopToRootAsync();
+				}
+		}
+
+		bool validateForm(Person person)
+		{
+			return (!string.IsNullOrWhiteSpace(person.User.Email) 
+			        && !string.IsNullOrWhiteSpace(person.User.Password) 
+			        && !string.IsNullOrWhiteSpace(person.CompleteName) 
+			        && new DateTime() != person.BirthDate
+			        && !string.IsNullOrWhiteSpace(person.Phone)
+					&& person.User.Email.Contains("@"));
 		}
 	}
 }

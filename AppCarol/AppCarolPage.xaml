@@ -9,6 +9,9 @@
 	<ContentPage.Content>
 		<StackLayout>
 			<Label Text="Main app content goes here" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+			<Label x:Name="idLabel" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+			<Label x:Name="emailLabel" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+			<Label x:Name="dataLabel" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

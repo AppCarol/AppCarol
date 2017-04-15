@@ -8,6 +8,9 @@ namespace AppCarol
 		public AppCarolPage()
 		{
 			InitializeComponent();
+			idLabel.Text = App.LoggedUser.Id.ToString();
+			emailLabel.Text = App.LoggedUser.User.Email;
+			dataLabel.Text = App.LoggedUser.BirthDate.ToString();
 		}
 
 		async void OnLogoutButtonClicked(object sender, EventArgs e)

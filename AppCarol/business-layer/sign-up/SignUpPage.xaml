@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:sys="clr-namespace:System;assembly=mscorlib"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
 			 x:Class="AppCarol.SignUpPage">
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="StartAndExpand">
-			<Label Text="Username" />
-			<Entry x:Name="usernameEntry" Placeholder="username" />
-			<Label Text="Password" />
-			<Entry x:Name="passwordEntry" IsPassword="true" />
-			<Label Text="Email address" />
-			<Entry x:Name="emailEntry" />
+			<Label Text="Nome Completo"/>
+			<Entry x:Name="completeNameEntry" Placeholder="Nome Completo" Keyboard="Text"/>
+			<Label Text="Aniversário" />
+			<DatePicker x:Name="birthDateEntry" VerticalOptions="CenterAndExpand" Date="{x:Static sys:DateTime.Now}">
+		         <DatePicker.Format>dd/MM/yyyy</DatePicker.Format>
+		         <DatePicker.MinimumDate>
+		            <sys:DateTime x:FactoryMethod="Parse">
+		               <x:Arguments>
+		                  <x:String>1 Jan 1900</x:String>
+		               </x:Arguments>
+		            </sys:DateTime>
+		         </DatePicker.MinimumDate>
+		         <DatePicker.MaximumDate>
+		            <sys:DateTime x:FactoryMethod="Parse">
+		               <x:Arguments>
+		                  <x:String>31 Dec 2050</x:String>
+		               </x:Arguments>
+		            </sys:DateTime>
+		         </DatePicker.MaximumDate>
+      		</DatePicker>
+			<Label Text="E-mail" />
+			<Entry x:Name="emailEntry" Placeholder="E-mail" Keyboard="Email"/>
+			<Label Text="Senha" />
+			<Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Senha" Keyboard="Text"/>
+			<Label Text="Telefone" />
+			<Entry x:Name="phoneEntry" Placeholder="Telefone" Keyboard="Telephone"/>
 			<Button Text="Sign Up" Clicked="OnSignUpButtonClicked" />
 			<Label x:Name="messageLabel" /> 
 		</StackLayout>

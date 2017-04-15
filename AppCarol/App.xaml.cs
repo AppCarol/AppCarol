@@ -5,11 +5,19 @@ namespace AppCarol
 	public partial class App : Application
 	{
 
+
+		public static Person LoggedUser { get; set;}
 		public static bool IsUserLoggedIn { get; set; }
 
 		public App()
 		{
 			InitializeComponent();
+
+
+			DataBaseUtils db = new DataBaseUtils();
+
+			db.DropAllTables();
+			db.CreateAllTables();
 
 			//MainPage = new AppCarolPage();
 			if (!IsUserLoggedIn)
