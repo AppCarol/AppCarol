@@ -69,7 +69,7 @@ namespace AppCarol
 		{
 			var db = DataBaseUtils.getConnection();
 
-			String qry = String.Format("SELECT p.*, u.* FROM Person p INNER JOIN User u on p.UserId = u.Id " +
+			String qry = String.Format("SELECT p.*, u.* FROM Person p JOIN User u on p.UserId = u.Id " +
 			                           "WHERE u.Email = '" + person.User.Email +"'");
 
 			var result = db.FindWithQuery<Person>(qry);
