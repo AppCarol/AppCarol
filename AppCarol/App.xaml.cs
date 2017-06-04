@@ -1,4 +1,7 @@
 ﻿using Xamarin.Forms;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace AppCarol
 {
@@ -33,6 +36,9 @@ namespace AppCarol
 		protected override void OnStart()
 		{
 			// Handle when your app starts
+
+			//Integration with Visual Studio Mobile Center
+			MobileCenter.Start(typeof(Analytics), typeof(Crashes));
 		}
 
 		protected override void OnSleep()
