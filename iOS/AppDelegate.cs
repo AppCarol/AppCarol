@@ -20,7 +20,7 @@ namespace AppCarol.iOS
 
 			// Code for starting up the Xamarin Test Cloud Agent
 #if ENABLE_TEST_CLOUD
-			Xamarin.Calabash.Start();
+			//Xamarin.Calabash.Start();
 #endif
 
 			//Integration with Visual Studio Mobile Center
